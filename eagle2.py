@@ -131,7 +131,7 @@ def main():
     print()
     print(kuning + "╔════════════════════════════════════════════════════════════════╗" + nc)
     print(kuning + f"   🦅  EAGLE TOOL - INITIALIZING STRESS TEST...                 " + nc)
-    print(kuning + f"   📡  Target: {target}" + " " * (55 - len(target)) +  " + nc)
+    print(kuning + f"   📡  Target: {target}" + " " * (55 - len(target))" "        " + nc)
     print(kuning + f"   ⚡  Request/Detik: {req_detik}  |  Durasi: {durasi} detik         " + nc)
     loading()
     print(kuning + f"   ✅  EAGLE READY!                                           " + nc)
