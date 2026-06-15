@@ -157,7 +157,7 @@ def main():
         print(hijau + f"  📊  Total    : {total}" + " " * (50 - len(str(total))) + nc)
         print(hijau + "──────────────────────────────────────────────────────────────────────" + nc)
         print(hijau + "  ⚠️   PERBANYAK IBADAH, KURANGI DRAMA            " + nc)
-        print(hijau + "  🛡️  JALANI NIKMATI DAN SYUKURI                   " + nc)
+        print(hijau + "  🛡️  JALANI, NIKMATI, SYUKURI PLUS TAU DIRI                   " + nc)
         print(hijau + "──────────────────────────────────────────────────────────────────────" + nc)
         
     except KeyboardInterrupt:
