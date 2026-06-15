@@ -60,7 +60,7 @@ def stress_test(target, req_per_detik, durasi):
                 with lock:
                     sukses += 1
                 print(hijau + f"[✓] Req #{no} | HTTP {response.status_code} | {waktu}ms" + nc)
-            elif response.status_code in [400, 401, 403, 404, 500, 502, 503]:
+            elif response.status_code in [400, 401, 403, 404, 500, 502, 503, 508]:
                 with lock:
                     gagal += 1
                 print(merah + f"[✗] Req #{no} | HTTP {response.status_code} | {waktu}ms" + nc)
@@ -102,13 +102,13 @@ def stress_test(target, req_per_detik, durasi):
 def main():
     banner()
     
-    print(cyan + "════════════════════════════════════════════════════════════════" + nc)
-    print(putih + "              EAGLE TOOL WEBSITE TEST" + nc)
-    print(cyan + "════════════════════════════════════════════════════════════════" + nc)
+    print(cyan + "──────────────────────────────────────────────────────────────────────" + nc)
+    print(putih + "              EAGLE TOOL - STRESS TESTER WEBSITE" + nc)
+    print(cyan + "──────────────────────────────────────────────────────────────────────" + nc)
     print()
     
     # Input target
-    print(biru + "[?] Masukkan URL target (https://example.com)" + nc)
+    print(biru + "[?] Masukkan URL target (contoh: https://example.com)" + nc)
     target = input("➤ ").strip()
     
     if not target.startswith(('http://', 'https://')):
@@ -129,13 +129,16 @@ def main():
         sys.exit(1)
     
     print()
-    print(kuning + "╔════════════════════════════════════════════════════════════════╗" + nc)
-    print(kuning + f"   🦅  EAGLE TOOL - INITIALIZING STRESS TEST...                 " + nc)
-    print(kuning + f"   📡  Target: {target}" + " " * (55 - len(target))" "        " + nc)
-    print(kuning + f"   ⚡  Request/Detik: {req_detik}  |  Durasi: {durasi} detik         " + nc)
+    print(kuning + "──────────────────────────────────────────────────────────────────────" + nc)
+    print(kuning + "  🦅  EAGLE TOOL - INITIALIZING STRESS TEST...                    " + nc)
+    
+    target_display = target[:50] + "..." if len(target) > 50 else target
+    print(kuning + f"  📡  Target: {target_display}" + " " * (55 - len(target_display)) + nc)
+    
+    print(kuning + f"  ⚡  Request/Detik: {req_detik}  |  Durasi: {durasi} detik        " + nc)
     loading()
-    print(kuning + f"   ✅  EAGLE READY!                                           " + nc)
-    print(kuning + "╚════════════════════════════════════════════════════════════════╝" + nc)
+    print(kuning + f"  ✅  EAGLE READY!                                            " + nc)
+    print(kuning + "──────────────────────────────────────────────────────────────────────" + nc)
     print(merah + "[!] Tekan CTRL+C untuk berhenti" + nc)
     print()
     
@@ -145,17 +148,17 @@ def main():
         sukses, gagal, timeout, total = stress_test(target, req_detik, durasi)
         
         print()
-        print(hijau + "╔════════════════════════════════════════════════════════════════╗" + nc)
-        print(hijau + "   🎯  EAGLE TOOL - STRESS TEST COMPLETED!                       " + nc)
-        print(hijau + "╠════════════════════════════════════════════════════════════════╣" + nc)
-        print(hijau + f"   ✅  Sukses   : {sukses}" + " " * (50 - len(str(sukses))) +  " + nc)
-        print(hijau + f"   ❌  Gagal    : {gagal}" + " " * (50 - len(str(gagal))) +  " + nc)
-        print(hijau + f"   ⏰  Timeout  : {timeout}" + " " * (50 - len(str(timeout))) +  " + nc)
-        print(hijau + f"   📊  Total    : {total}" + " " * (50 - len(str(total))) +  " + nc)
-        print(hijau + "╠════════════════════════════════════════════════════════════════╣" + nc)
-        print(hijau + "   ⚠️   KURANGI DRAMA, PERBANYAK IBADAH        " + nc)
-        print(hijau + "   🛡️   RENCANA TUHAN SELALU LEBIH INDAH               " + nc)
-        print(hijau + "╚════════════════════════════════════════════════════════════════╝" + nc)
+        print(hijau + "──────────────────────────────────────────────────────────────────────" + nc)
+        print(hijau + "  🎯  EAGLE TOOL - STRESS TEST COMPLETED!                        " + nc)
+        print(hijau + "──────────────────────────────────────────────────────────────────────" + nc)
+        print(hijau + f"  ✅  Sukses   : {sukses}" + " " * (50 - len(str(sukses))) + nc)
+        print(hijau + f"  ❌  Gagal    : {gagal}" + " " * (50 - len(str(gagal))) + nc)
+        print(hijau + f"  ⏰  Timeout  : {timeout}" + " " * (50 - len(str(timeout))) + nc)
+        print(hijau + f"  📊  Total    : {total}" + " " * (50 - len(str(total))) + nc)
+        print(hijau + "──────────────────────────────────────────────────────────────────────" + nc)
+        print(hijau + "  ⚠️   PERBANYAK IBADAH, KURANGI DRAMA            " + nc)
+        print(hijau + "  🛡️  JALANI NIKMATI DAN SYUKURI                   " + nc)
+        print(hijau + "──────────────────────────────────────────────────────────────────────" + nc)
         
     except KeyboardInterrupt:
         print()
@@ -164,3 +167,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+    
