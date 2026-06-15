@@ -108,20 +108,20 @@ def main():
     print()
     
     # Input target
-    print(biru + "[?] Masukkan URL target (contoh: https://example.com)" + nc)
+    print(biru + "[?] URL target (https://example.com)" + nc)
     target = input("➤ ").strip()
     
     if not target.startswith(('http://', 'https://')):
         target = 'https://' + target
     
-    print(biru + "[?] Jumlah request per detik:" + nc)
+    print(biru + "[?] Request per detik:" + nc)
     try:
         req_detik = int(input("➤ ").strip())
     except ValueError:
         print(merah + "[!] Harus angka!" + nc)
         sys.exit(1)
     
-    print(biru + "[?] Durasi uji (detik):" + nc)
+    print(biru + "[?] Durasi  (detik):" + nc)
     try:
         durasi = int(input("➤ ").strip())
     except ValueError:
