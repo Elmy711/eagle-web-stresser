@@ -92,7 +92,7 @@ def stress_test(target, req_per_detik, durasi):
             t.join()
         
         elapsed = time.time() - start_second
-        print(cyan + f"━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ [ {datetime.now().strftime('%H:%M:%S')} ] ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━" + nc)
+        print(cyan + f"━━━━━━━━━━━━━━━━━━━━━ [ {datetime.now().strftime('%H:%M:%S')} ] ━━━" + nc)
         
         if elapsed < 1:
             time.sleep(1 - elapsed)
